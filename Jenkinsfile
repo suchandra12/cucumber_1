@@ -17,7 +17,7 @@ pipeline {
         script {
           emailext body: 'Cucumber reports attached.', 
                    subject: 'Cucumber Test Results', 
-                   to: 'suchandrareddy12@gmail.com', 
+                   to: 'reddysuchi197@gmail.com', 
                    attachmentsPattern: 'target/cucumber-reports/*.html'
         }
       }
