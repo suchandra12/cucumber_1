@@ -9,8 +9,12 @@ pipeline {
         always {
           junit '**/surefire-reports/*.xml'
           cucumber buildStatus: 'null', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: 'target/cucumber.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
-          
-          // Send email with cucumber reports
+        }
+      }
+    }
+    stage('Send Email') {
+      steps {
+        script {
           emailext body: 'Cucumber reports attached.', 
                    subject: 'Cucumber Test Results', 
                    to: 'suchandrareddy12@gmail.com', 
