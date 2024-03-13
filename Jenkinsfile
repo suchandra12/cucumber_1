@@ -12,15 +12,5 @@ pipeline {
         }
       }
     }
-    stage('Send Email') {
-      steps {
-        script {
-          emailext body: 'Cucumber reports attached.', 
-                   subject: 'Cucumber Test Results', 
-                   to: 'reddysuchi197@gmail.com', 
-                   attachmentsPattern: 'target/cucumber-reports/*.html'
-        }
-      }
-    }
   }
 }
